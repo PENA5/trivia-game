@@ -1,5 +1,11 @@
 body {
-    background-image: url("../images/marvel-team-wallpaper.jpg") ;
+    background-image: url("../images/marvel-team-wallpaper.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+
+
+
 
 }
 #jumbotron{
@@ -7,6 +13,16 @@ body {
     background-color: rgb(134, 183, 230)50, 175);
 
 }
+
+
+#start-button {
+    margin-top: 100px;
+    margin-bottom: 200px;
+    width: 25%;
+
+
+}
+
 
 #container {
     background-color: rgb(5, 5, 31);
@@ -20,13 +36,6 @@ body {
 
 }
 
-.start-button {
-    margin-top: 100px;
-    margin-bottom: 200px;
-    color: white;
-
-
-}
 
 #startBtn {
     color: white;

@@ -12,25 +12,48 @@
 </head>
 
 <body>
-        <div id = "container">
+        <div class = "container">
 
- <div style="background:transparent" class="jumbotron">
+ <div style="background:transparent" id="jumbotron">
         <h1>Marvel Trivia!</h1> 
         <h5>How well do you know the Marvel characters?</h5>
-      
         </div>
-
     
-    <div class = "start-button"> 
-            <button type="startBtn" style="color:white" class="btn btn-lg">Start!</button>
+    <div class = "start-button" id ="startGame"> 
+            <button type="startBtn" style="color:black" class="btn btn-lg">Start!</button>
     </div>
 
+    <div id = "gameArea">
 
+        <div class="container"id="Qs">
+            <div id="time"></div>
+            <div class="question"></div><br>
+            <div class="choices"></div>
+
+        </div>
+
+        <div class="container" id="answers">
+            <div id="text"></div>
+            <div id="correctAnswer"></div>
+            <div id="gif"></div><br>
+
+        </div>
+
+        <div class="container" id="results">
+            <div id="resltText"></div>
+            <div id="correctAnswers"></div>
+            <div id="wrongAnswers"></div>
+            <div id="unanswered"></div><br>
+            <button id="startOverBtn"></button>
+
+
+        </div>
+
+    </div>
 
 </div>
  
-
-<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/game.js"></script>
 
 </body>
