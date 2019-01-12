@@ -47,7 +47,7 @@ $(document).ready(function(){
 
         {
             question: "What character is king of an advanced civilization located in Africa?",
-            choices: ["Black Panther", "Hulk", "The Black Bolt", "Magnito"],
+            choices: ["Black Panther", "Hulk", "Black Bolt", "Magnito"],
             correct: 0,
             image: "assets/images/panther.gif",
 
@@ -86,21 +86,24 @@ $(document).ready(function(){
 
     ];
 
+    //hides content after start
     $("#gameArea").hide();
 
+    //start button click and hide
     $("#startBtn").on("click", function(){
         $("#startGame").hide();
         newGame();
 
     });
 
+    //reset button
     $("#startOverBtn").on("click", function(){
         $("#results").hide();
         newGame();
     });
 
 
-
+    //function to start the game after click
     function newGame() {
         $("#gameArea").show();
         $("#answers").hide();
@@ -113,16 +116,16 @@ $(document).ready(function(){
 
     }
 
-
+    //display questions
     function questions(){
         $("#answers").hide();
         $("#Qs").show();
         answered = true;
-
+        //gets ? from array
         $(".question").html(triviaQuestions[currentQ].question);
 
 
-
+        //loops through choices and appends
         for (var i = 0; i <= 4; i++) {
             var list = $("<div>");
             list.text(triviaQuestions[currentQ].choices[i]);
@@ -131,8 +134,10 @@ $(document).ready(function(){
             $(".choices").append(list);
         }
 
+        //calls timer
         countdown();
 
+        //user click
         $(".thisChoice").on("click",function(){
             userChoice = $(this).data("index");
             clearInterval(time);
@@ -142,16 +147,18 @@ $(document).ready(function(){
     }
 
 
+    //timer
     function countdown() {
-        seconds = 15;
+        seconds =15;
         $("#time").html("00:" + seconds);
         answered = true;
 
-        time = setInterval(countDownShow, 1000);
+       // time = setInterval(countDownShow, 1000);
 
     }
 
 
+    //show timer
     function countDownShow(){
         seconds --;
         if(seconds < 5) {
@@ -170,7 +177,7 @@ $(document).ready(function(){
 
     }
 
-
+    //displays answer
     function showAnswer() {
         $("#Qs").hide();
         $("#results").hide();
@@ -182,6 +189,7 @@ $(document).ready(function(){
         console.log(rightAnswerText);
         console.log(rightAnswerIndex);
 
+        //gif img
         var gifLink = triviaQuestions[currentQ].image;
         var Giffy = $("<img>");
         Giffy.attr("Src", gifLink);
@@ -189,7 +197,7 @@ $(document).ready(function(){
         $("#gif").html(Giffy);
 
 
-
+        //keeps trak of answers 
         if ((userChoice === rightAnswerIndex) && (answered === true)) {
             correctAnswer++;
             $("#text").html(text.correct);
@@ -204,6 +212,7 @@ $(document).ready(function(){
             $("#correctAnswer").html("The correct answer was: " + rightAnswerText);
             answered = true;
         }
+
 
         if (currentQ === (triviaQuestions.length-1)) {
             setTimeout(results, 10000);
@@ -226,8 +235,6 @@ $(document).ready(function(){
         $("#startOverBtn").html("RESTART GAME");
 
     }
-   
-
     
 
 });
